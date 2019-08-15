@@ -1,5 +1,5 @@
 ## reading Detection history
-DH <- read.csv("collapse.csv")
+DH <- read.csv("OriginalDH.csv")
 
 # number of cameratrap days
 IN_Occ <- ncol(DH) -1
