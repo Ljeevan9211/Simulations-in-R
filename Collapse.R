@@ -8,7 +8,7 @@ IN_Occ <- ncol(DH) -1
 OL <- 5 # one occasion is 5 days 
 
 ## getting the new Occasion length
-Occ_no <- IN_Occ%/%Occ_length # getting the collapsed occasion length
+Occ_no <- IN_Occ%/%OL # getting the collapsed occasion length
 Occ_no
 N <- nrow(DH)
 head(DH)
