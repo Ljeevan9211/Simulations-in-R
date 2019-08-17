@@ -1,12 +1,16 @@
-## reading Detection history
+#### This reads all the .csv file in a folder and writes the collapsed detection history as .csv file 
+#### The filename will have the original file name as prefix with occassion length as suffix
+
+## reading Detection history from the folder each having an extension .csv
 DHist <- list.files(pattern="*.csv")
 ## defining the occassion length
 	# OL <- 5 # one occasion is 5 days 
 	OL <- c(3,5,7,13) ## if you want different length of occassions
-	
+
+# Creating a loop for each of the .csv file	
 for (l in 1:length(DHist)){
 	assign(DHist[l], read.csv(DHist[l]))
-	DH <- read.csv(DHist[l])
+	DH <- read.csv(DHist[l]) # reading DH from .csv file
 	name <- strsplit(DHist[l], ".csv")
 	Species <- name[1] # Name of your species if the filename has been named with species
 
@@ -33,7 +37,7 @@ for (l in 1:length(DHist)){
 			rownames(DH2) <- DH[,1]
 		# creating a csv file
 		name <- paste(Species, "_Occ", as.character(OL[k]),".csv")
-		name <- gsub(" ", "", name) 
+		name <- gsub(" ", "", name) # getting rid of the space from the name
 		write.csv(DH2, name)
 	}
 }
