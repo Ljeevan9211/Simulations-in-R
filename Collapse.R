@@ -19,7 +19,7 @@ DH2 <-  matrix(nrow = N, ncol = Occ_no)
 # now doing the loop to get the maximum value from within occasion days
 for(i in 1:N){
 for(j in 1:Occ_no){
-DH2[i, j] <- max(DH[i,(((j-1)*OL)+2):((OL*j)+2)]) ## 2 here because the first column is trapsite
+DH2[i, j] <- max(DH[i,(((j-1)*OL)+2):((OL*j)+1)]) ## 2 here because the first column is trapsite
 }}
 
 ## Making it neat
